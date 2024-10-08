@@ -1,0 +1,16 @@
+{{!-- template-lint-disable require-input-label --}}
+<div class="searchbox">
+    <button type="button" class="searchbox__btn searchbox__start-btn" {{toggle-class '.searchbox' 'is-opened' outside=(hash event-type='mouseover')}}>
+        <span class="magnifier">
+            <div class="magnifier__circle"></div>
+            <div class="magnifier__line"></div>
+        </span>
+    </button>
+    <button type="button" class="searchbox__btn searchbox__search-btn">
+        <span class="magnifier">
+            <div class="magnifier__circle"></div>
+            <div class="magnifier__line"></div>
+        </span>
+    </button>
+    <input type="text" class="searchbox__input" name={{ @name }} value="">
+</div>

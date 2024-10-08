@@ -1,0 +1,16 @@
+<div class="selectbox">
+    <div class="selectbox__trigger" {{toggle-class 'self' 'is-opened' outside=true}}>
+        <div class="selectbox__selected">{{ this.selected.label }}</div>
+        <div class="selectbox__arrow">&lt;</div>
+    </div>
+    <div class="selectbox__options">
+        {{#each @options key='value' as |option|}}
+            <div class="selectbox__option">
+                {{#let (unique-id) as |id|}}
+                    <input id={{ id }} type="radio" name={{ @name }} class="selectbox__input" value={{ option.value }} checked={{eq option.value this.selected.value}} onclick={{fn (mut this.selected) option}}>
+                    <label class="selectbox__label" for={{ id }}>{{ option.label }}</label>
+                {{/let}}
+            </div>
+        {{/each}}
+    </div>
+</div>

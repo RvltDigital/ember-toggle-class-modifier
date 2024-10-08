@@ -1,0 +1,39 @@
+<div id={{ this.guid }} class="colors">
+    <div class="colors__selected"></div>
+    <div class="colors__option">
+        {{#let (unique-id) as |id|}}
+            <input id={{ id }}
+              class="colors__input"
+              type="radio"
+              name={{ @name }}
+              value="red"
+              {{toggle-class (concat '#' this.guid) 'colors--red' event-type='change' toggle=this.onToggle}}
+            >
+            <label class="colors__label" for={{ id }}>Red</label>
+        {{/let}}
+    </div>
+    <div class="colors__option">
+        {{#let (unique-id) as |id|}}
+            <input id={{ id }}
+              class="colors__input"
+              type="radio"
+              name={{ @name }}
+              value="green"
+              {{toggle-class (concat '#' this.guid) 'colors--green' event-type='change' toggle=this.onToggle}}
+            >
+            <label class="colors__label" for={{ id }}>Green</label>
+        {{/let}}
+    </div>
+    <div class="colors__option">
+        {{#let (unique-id) as |id|}}
+            <input id={{ id }}
+              class="colors__input"
+              type="radio"
+              name={{ @name }}
+              value="blue"
+              {{toggle-class (concat '#' this.guid) 'colors--blue' event-type='change' toggle=this.onToggle}}
+            >
+            <label class="colors__label" for={{ id }}>Blue</label>
+        {{/let}}
+    </div>
+</div>

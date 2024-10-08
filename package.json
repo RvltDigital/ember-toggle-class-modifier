@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "repository": "https://github.com/RvltDigital/ember-toggle-class-modifier",
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "build": "npm run build --workspace ember-toggle-class-modifier",
+    "lint": "npm run lint --workspaces --if-present",
+    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "prepare": "npm run build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "npm start --workspace ember-toggle-class-modifier -- --no-watch.clearScreen",
+    "start:test-app": "npm start --workspace test-app",
+    "test": "npm run test --workspaces --if-present",
+    "test:ember": "npm run test:ember --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-ember-template-tag": "^2.0.2"
+  },
+  "workspaces": [
+    "ember-toggle-class-modifier",
+    "test-app"
+  ]
+}

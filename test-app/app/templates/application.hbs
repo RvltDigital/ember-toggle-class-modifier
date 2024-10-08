@@ -1,0 +1,35 @@
+<div class="container">
+    <main class="main">
+        <h1>Ember Class Toggle Modifier - Test App</h1>
+        <form class="form" action="javascript:void(0)">
+            <div class="form__row">
+                <div class="form__label">Accordion</div>
+                <Accordion />
+            </div>
+            <div class="form__row">
+                <div class="form__label">Numbers</div>
+                <Selectbox
+                  @name="numbers"
+                  @options={{array (hash value=1 label='First') (hash value=2 label='Second') (hash value=3 label='Third')}}
+                  @default={{ 2 }}
+                />
+            </div>
+            <div class="form__row">
+                <div class="form__label">Names</div>
+                <Selectbox
+                  @name="names"
+                  @options={{array (hash value=1 label='John') (hash value=2 label='Peter') (hash value=3 label='Mike')}}
+                />
+            </div>
+            <div class="form__row">
+                <div class="form__label"><span>Search</span><span class="form__help"><Popup @label="i" @header="Search Help" @content="Click on the magnifier button to start the search." /></span></div>
+                <Searchbox @name="term" />
+            </div>
+            <div class="form__row">
+                <div class="form__label"><span>Colors</span><span class="form__help"><Popup @label="i" class="form__help" @header="Color Help" @content="Pick a color." /></span></div>
+                <Colors @name="colors" />
+            </div>
+        </form>
+    </main>
+</div>
+<div id="popups"></div>
