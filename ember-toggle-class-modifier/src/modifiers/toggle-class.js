@@ -15,7 +15,7 @@ const MODE = Object.freeze({
 
 /**
  * The toggle class modifier function.
- * @param {HTMLElement} trigger - The trigger element of the toggle.
+ * @param {Element} trigger - The trigger element of the toggle.
  * @param {string} positional.target - The first item of the positional parameters. The CSS selector of the target elements (e.g. '.class', '.class1.class2' or 'tag.class1.class2' etc.).
  * @param {string[]} positional.classes - The rest of the positional parameters items. HTML classes to be toggled on the target elements.
  * @param {function} [named.toggle] - A callback called before the actual class toggling. The callback receives the original event object and the information from where the event went ('outside' or 'trigger') as parameters. If the return value of the callback is false, the toggle is not performed.
@@ -54,7 +54,7 @@ function toggleClass(trigger, [target, ...classes], { 'toggle': toggle, 'mode': 
             return;
         }
         // Prevents toggling if modifier's toggle argument is a function and its return value is false.
-        if (typeof toggle === 'function' && toggle(event, EVENT_SOURCE_TYPE.OUTSIDE) === false) {
+        if (typeof toggle === 'function' && toggle(event, EVENT_SOURCE_TYPE.TRIGGER) === false) {
             return;
         }
         findTargetElements(trigger, target)

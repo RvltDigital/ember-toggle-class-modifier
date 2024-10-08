@@ -396,3 +396,24 @@ body {
 .popup__content p {
   margin: 0;
 }
+
+/* Mood */
+.mood {
+  display: flex;
+  column-gap: 30px;
+}
+
+.mood__icon {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  fill: gray;
+}
+
+.mood__icon--selected {
+  fill: green;
+}
+
+.mood__input {
+  display: none;
+}

@@ -1,6 +1,6 @@
 {
   "name": "ember-toggle-class-modifier",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Implementation of event-driven html class toggle for Ember.js.",
   "keywords": [
     "ember-addon"
