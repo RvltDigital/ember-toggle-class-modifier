@@ -13,6 +13,10 @@ class PopupComponent extends Component {
     });
   }
 
+  close() {
+    console.log('Popup is saying goodbye.');
+  }
+
   willDestroy() {
     super.willDestroy(...arguments);
     const popup = document.getElementById(this.popupId);

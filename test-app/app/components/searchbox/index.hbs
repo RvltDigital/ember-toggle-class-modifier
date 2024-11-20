@@ -1,6 +1,7 @@
 {{!-- template-lint-disable require-input-label --}}
+{{!-- template-lint-disable no-builtin-form-components --}}
 <div class="searchbox">
-    <button type="button" class="searchbox__btn searchbox__start-btn" {{toggle-class '.searchbox' 'is-opened' outside=(hash event-type='mouseover')}}>
+    <button type="button" class="searchbox__btn searchbox__start-btn" {{toggle-class '.searchbox' 'is-opened' toggle=this.toggle outside=(hash event-type='mousemove')}}>
         <span class="magnifier">
             <div class="magnifier__circle"></div>
             <div class="magnifier__line"></div>
@@ -12,5 +13,5 @@
             <div class="magnifier__line"></div>
         </span>
     </button>
-    <input type="text" class="searchbox__input" name={{ @name }} value="">
+    <Input @type="text" class="searchbox__input" name={{ @name }} @value={{ this.term }} />
 </div>

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run build --workspace ember-toggle-class-modifier",
     "lint": "npm run lint --workspaces --if-present",
-    "lint:fix": "npm run lint:fix --workspaces --if-present",
+    "lint:fix": "echo 'lint:fix is disabled'",
     "prepare": "npm run build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "npm start --workspace ember-toggle-class-modifier -- --no-watch.clearScreen",

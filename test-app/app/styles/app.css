@@ -49,6 +49,19 @@ body {
   padding: 15px 10px 25px;
 }
 
+.form__cols {
+  display: flex;
+  column-gap: 15px;
+}
+
+.form__col {
+  flex: 1 1 auto;
+}
+
+.form__col--half {
+  flex: 0.5 0.5 50%;
+}
+
 .form__label {
   display: flex;
   column-gap: 13px;
@@ -146,6 +159,7 @@ body {
 
 .selectbox__selected {
   flex: 1 1 auto;
+  padding-right: 10px;
 }
 
 .selectbox__arrow {
@@ -165,16 +179,18 @@ body {
   width: 100%;
   box-sizing: border-box;
   flex-direction: column;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
+  border: 1px solid gray;
+  border-top: none;
   display: none;
+  max-height: 250px;
+  overflow: auto;
 }
 
 .selectbox__trigger.is-opened + .selectbox__options {
   display: block;
 }
 
-.selectbox__option {
+.selectbox__option:not(:last-of-type) {
   border-bottom: 1px solid gray;
 }
 
@@ -416,4 +432,94 @@ body {
 
 .mood__input {
   display: none;
+}
+
+/* Multi Selectbox */
+.multi-selectox {
+  font-size: 20px;
+  position: relative;
+}
+
+.multi-selectox__trigger {
+  display: flex;
+  align-items: center;
+  background-color: lightgray;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.multi-selectox__selected {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding-right: 10px;
+}
+
+.multi-selectox__selected-item {
+  font-size: 12px;
+  border: 1px solid;
+  background: lightgreen;
+  border-color: green;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.multi-selectox__selected-item::after {
+  content: "\2715";
+}
+
+.multi-selectox__selected-item:hover {
+  background: #ff4b4b;
+  border-color: #9d0000;
+  color: white;
+}
+
+.multi-selectox__selected-item:hover::after {
+  font-weight: bold;
+}
+
+.multi-selectox__arrow {
+  flex: 0 0 auto;
+  font-weight: bolder;
+  transform: rotate(-90deg) scale(1, 1.5);
+}
+
+.multi-selectox.is-opened .multi-selectox__arrow {
+  transform: rotate(90deg) scale(1, 1.5);
+}
+
+.multi-selectox__options {
+  background: white;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+  flex-direction: column;
+  border: 1px solid gray;
+  border-top: none;
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 250px;
+  overflow: auto;
+}
+
+.multi-selectox.is-opened .multi-selectox__options {
+  display: block;
+}
+
+.multi-selectox__option {
+  padding: 10px 15px;
+  display: block;
+  cursor: pointer;
+}
+
+.multi-selectox__option:not(:last-of-type) {
+  border-bottom: 1px solid gray;
+}
+
+.multi-selectox__option:hover {
+  background: #efeeee;
 }

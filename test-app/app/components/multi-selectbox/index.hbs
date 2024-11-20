@@ -1,0 +1,21 @@
+{{!-- template-lint-disable no-invalid-interactive --}}
+<div id={{ this.guid }} class="multi-selectox">
+    <div class="multi-selectox__trigger" {{toggle-class '.multi-selectox' 'is-opened' toggle=this.toggle outside=true}}>
+        <div class="multi-selectox__selected">
+            <input type="hidden" name={{ @name }} value={{ this.value }}>
+            {{#each this.selected as |option|}}
+                <div class="multi-selectox__selected-item" onclick={{fn this.onRemove option}}>
+                    {{ option }}
+                </div>
+            {{/each}}
+        </div>
+        {{#if this.options.length}}
+            <div class="multi-selectox__arrow">&lt;</div>
+        {{/if}}
+    </div>
+    <ul class="multi-selectox__options">
+        {{#each this.options as |option|}}
+            <li class="multi-selectox__option" onclick={{fn this.onAdd option}}>{{ option }}</li>
+        {{/each}}
+    </ul>
+</div>

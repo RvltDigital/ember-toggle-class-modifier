@@ -7,22 +7,43 @@
                 <Accordion />
             </div>
             <div class="form__row">
-                <div class="form__label">Numbers</div>
-                <Selectbox
-                  @name="numbers"
-                  @options={{array (hash value=1 label='First') (hash value=2 label='Second') (hash value=3 label='Third')}}
-                  @default={{ 2 }}
-                />
+                <div class="form__label">Selectbox</div>
+                <div class="form__cols">
+                    <div class="form__col form__col--half">
+                        <Selectbox
+                          @name="numbers"
+                          @options={{array (hash value=1 label='One') (hash value=2 label='Two') (hash value=3 label='Three')}}
+                          @default={{ 2 }}
+                        />
+                    </div>
+                    <div class="form__col form__col--half">
+                        <Selectbox
+                          @name="names"
+                          @options={{array (hash value=1 label='John') (hash value=2 label='Peter') (hash value=3 label='Mike')}}
+                        />
+                    </div>
+                </div>
             </div>
             <div class="form__row">
-                <div class="form__label">Names</div>
-                <Selectbox
-                  @name="names"
-                  @options={{array (hash value=1 label='John') (hash value=2 label='Peter') (hash value=3 label='Mike')}}
-                />
+                <div class="form__label">Multi Selectbox</div>
+                <div class="form__cols">
+                   <div class="form__col form__col--half">
+                        <MultiSelectbox
+                          @name="animals"
+                          @options={{array 'Dog' 'Cat' 'Cobra' 'Cow' 'Horse' 'Koala' 'Pigeon' 'Rabbit' 'Tiger' 'Turtle' 'Wolf'}}
+                          @default={{array 'Cow' 'Koala' 'Rabbit'}}
+                        />
+                    </div>
+                    <div class="form__col form__col--half">
+                        <MultiSelectbox
+                          @name="food"
+                          @options={{array 'Bread' 'Burger' 'Pasta' 'Pizza' 'Potatoes'}}
+                        />
+                    </div>
+                </div>
             </div>
             <div class="form__row">
-                <div class="form__label"><span>Search</span><span class="form__help"><Popup @label="i" @header="Search Help" @content="Click on the magnifier button to start the search." /></span></div>
+                <div class="form__label"><span>Searchbox</span><span class="form__help"><Popup @label="i" @header="Search Help" @content="Click on the magnifier button to start the search." /></span></div>
                 <Searchbox @name="term" />
             </div>
             <div class="form__row">
